@@ -1,5 +1,7 @@
 # University of Washington, Programming Languages, Homework 6, hw6runner.rb
 
+# Authored by Joshua Z, auto grader output: 100/100.
+
 # This is the only file you turn in, so do not modify the other files as
 # part of your solution.
 
@@ -8,7 +10,8 @@ class MyPiece < Piece
   All_My_Pieces =   All_Pieces + [rotations([[0, -1], [1, -1], [0, 0], [1, 0], [0, 1]]), #first new block
                                   [[[0, 0], [-2, 0], [-1, 0], [1, 0], [2, 0]], # second new block (only needs two)
                                    [[0, 0], [0, -2], [0, -1], [0, 1], [0, 2]]],
-                                  rotations([[0, 0], [0, 1], [1, 0]])] #third new block    
+                                  rotations([[0, 0], [0, 1], [1, 0]])] #third new block
+  Cheat_Piece = [[[0,0]]]
   # your enhancements here
   def initialize (point_array, board, piece_size_in = nil)
     super(point_array, board)
@@ -16,11 +19,11 @@ class MyPiece < Piece
   end
   def self.next_piece (board)
     @pick = All_My_Pieces.sample
-    @piece_size = @pick[0].size  #the next line will make a new MyPiece instance which will set piece_size to nil.
+    @piece_size = @pick[0].size  #the next line will make a new MyPiece instance which will set piece_size to nil as default.
     MyPiece.new(@pick, board, @piece_size) #therefore it is necessary to input piece_size into the new instance
   end
   def self.cheat_piece (board)
-    MyPiece.new([[[0,0]]], board, 1)
+    MyPiece.new(Cheat_Piece, board, 1)
   end
   def get_piece_size
     @piece_size_in
@@ -46,9 +49,10 @@ class MyBoard < Board
       @cheat_on = true
     end
   end
-  def next_piece (cheat = false)
-    if cheat
+  def next_piece
+    if @cheat_on
       @current_block = MyPiece.cheat_piece(self)
+      @cheat_on = false
     else
       @current_block = MyPiece.next_piece(self)
     end
@@ -65,44 +69,6 @@ class MyBoard < Board
     }
     remove_filled
     @delay = [@delay - 2, 80].max
-  end
-  def run
-    ran = @current_block.drop_by_one
-    if !ran
-      store_current
-      if !game_over?
-        if @cheat_on
-          next_piece(true)
-          @cheat_on = false
-        else
-          next_piece
-        end
-      end
-    end
-    @game.update_score
-    draw
-  end
-  def drop_all_the_way
-    if @game.is_running?
-      ran = @current_block.drop_by_one
-      @current_pos.each{|block| block.remove}
-      while ran
-        @score += 1
-        ran = @current_block.drop_by_one
-      end
-      draw
-      store_current
-      if !game_over?
-        if @cheat_on
-          next_piece(true)
-          @cheat_on = false
-        else
-          next_piece
-        end
-      end
-      @game.update_score
-      draw
-    end
   end
 end
 
