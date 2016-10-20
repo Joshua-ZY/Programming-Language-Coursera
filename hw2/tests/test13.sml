@@ -1,0 +1,5 @@
+val test1 = careful_player([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)], 3) 
+val test2 = careful_player([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)], 13) 
+val test3 = careful_player([(Clubs,Ace),(Spades,Ace),(Clubs,Ace),(Spades,Ace)], 45) 
+val test4 = careful_player([(Clubs,Ace),(Spades, Num 2),(Clubs,Ace),(Spades,Ace)], 13) 
+val test5 = careful_player([(Clubs,Ace),(Spades, Num 2),(Clubs,Ace),(Spades,Ace)], 22) 

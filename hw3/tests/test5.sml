@@ -1,0 +1,6 @@
+val test6 = longest_capitalized [] = ""
+val test7 = longest_capitalized ["sfsdafefeAe","basdfefc","Csadfef"] = "Csadfef"
+val test8 = longest_capitalized ["Aas","bcd","Cdf"] = "Aas"
+val test9 = longest_capitalized ["A","bcasdfeefeasfesfsaefs","Casfdefesafa","dasf"] = "Casfdefesafa"
+val test10 = longest_capitalized ["A","bc","C"] = "A"
+val test5 = longest_capitalized ["b","bc","afefe"] = ""

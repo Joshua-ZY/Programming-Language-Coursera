@@ -1,0 +1,5 @@
+val test1 = longest_string2 [] = ""
+val test2 = longest_string2 ["sfsdafefeAe","basdfefc","Csadfef"] = "sfsdafefeAe"
+val test3 = longest_string2 ["Aas","bcd","Cdf"] = "Cdf"
+val test4 = longest_string2 ["A","bcasdfe","Casfdefesafa","dasf"] = "Casfdefesafa"
+val test5 = longest_string2 ["A","bc","C"] = "bc"

@@ -1,0 +1,11 @@
+val test1 = longest_string4 [] = ""
+val test2 = longest_string4 ["sfsdafefeAe","basdfefc","Csadfef"] = "sfsdafefeAe"
+val test3 = longest_string4 ["Aas","bcd","Cdf"] = "Cdf"
+val test4 = longest_string4 ["A","bcasdfe","Casfdefesafa","dasf"] = "Casfdefesafa"
+val test5 = longest_string4 ["A","bc","C"] = "bc"
+
+val test6 = longest_string3 [] = ""
+val test7 = longest_string3 ["sfsdafefeAe","basdfefc","Csadfef"] = "sfsdafefeAe"
+val test8 = longest_string3 ["Aas","bcd","Cdf"] = "Aas"
+val test9 = longest_string3 ["A","bcasdfe","Casfdefesafa","dasf"] = "Casfdefesafa"
+val test10 = longest_string3 ["A","bc","C"] = "bc"

@@ -1,0 +1,10 @@
+val test1 = reasonable_date ((1,2,3)) = true
+val test2 = reasonable_date ((0,2,3)) = false
+val test3 = reasonable_date ((2,2,29)) = false
+val test4 = reasonable_date ((100,2,29)) = false
+val test5 = reasonable_date ((~1,2,3)) = false
+val test6 = reasonable_date ((1,~2,3)) = false
+val test7 = reasonable_date ((1,2,~3)) = false
+val test8 = reasonable_date ((2015,13,3)) = false
+val test9 = reasonable_date ((2018,11,38)) = false
+val test10 = reasonable_date ((400,2,29)) = true
