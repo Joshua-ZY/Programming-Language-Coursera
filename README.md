@@ -1,6 +1,7 @@
 # Programming-Language-Coursera
-Assignments and codes of Coursera MOOC course Programming Language by Dan Grossman @ University of Washington
-
+Assignments and codes of Coursera MOOC course Programming Language by Dan Grossman @ University of Washington  
+  
+Scores of each assignment:
 * HW1: 105/100
 * HW2: 105/100
 * HW3: 100/100
